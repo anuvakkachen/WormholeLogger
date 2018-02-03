@@ -1,0 +1,3 @@
+include  ':WormholeLoggerCommon', ':WormholeLoggerPortal', ':SamplePortal', ':WormholeLogger', ':SampleApp'
+
+rootProject.name = 'WormholeLogger-parent'

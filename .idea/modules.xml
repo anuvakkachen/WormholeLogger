@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SampleApp/SampleApp.iml" filepath="$PROJECT_DIR$/SampleApp/SampleApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SamplePortal/SamplePortal.iml" filepath="$PROJECT_DIR$/SamplePortal/SamplePortal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WormholeLogger/WormholeLogger.iml" filepath="$PROJECT_DIR$/WormholeLogger/WormholeLogger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WormholeLogger-parent.iml" filepath="$PROJECT_DIR$/WormholeLogger-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WormholeLoggerCommon/WormholeLoggerCommon.iml" filepath="$PROJECT_DIR$/WormholeLoggerCommon/WormholeLoggerCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WormholeLoggerPortal/WormholeLoggerPortal.iml" filepath="$PROJECT_DIR$/WormholeLoggerPortal/WormholeLoggerPortal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WormholeLoggerPortal/WormholeLoggerService.iml" filepath="$PROJECT_DIR$/WormholeLoggerPortal/WormholeLoggerService.iml" />
+    </modules>
+  </component>
+</project>
