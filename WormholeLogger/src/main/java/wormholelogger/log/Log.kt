@@ -15,8 +15,6 @@ import wormholelogger.log.internal.WhLoggerRouter
  * Log wrapper for [android.util.Log].
  * This will send the formatAndLog to remote wormhole (firebase) if a wormhole portal is installed, if not it logs
  * to the standard [android.util.Log]
- *
- * Call [Log.init] to initialize the logger with the client packageName
  */
 class Log {
 
