@@ -1,5 +1,6 @@
 package wormholelogger.service.internal
 
+import android.util.Log
 import wormholelogger.common.WhLogger
 import wormholelogger.service.WormholeLogger
 
@@ -12,6 +13,7 @@ internal class WhLoggerImpl : WhLogger {
 
     override fun register(packageName: String?): Boolean {
         clientAccepted = WormholeLogger.canAcceptClient(packageName)
+        Log.v("WhLog", "Checking $packageName $clientAccepted")
         return clientAccepted
     }
 

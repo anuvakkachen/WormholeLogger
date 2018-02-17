@@ -11,5 +11,10 @@ import wormholelogger.service.internal.WhLoggerImpl
  */
 class WormholeLoggerService : Service() {
 
+    override fun onCreate() {
+        WormholeLogger.init(this)
+        super.onCreate()
+    }
+
     override fun onBind(intent: Intent) = WhLogger_Stub(WhLoggerImpl())
 }

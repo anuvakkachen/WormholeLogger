@@ -1,6 +1,10 @@
 package wormholelogger.service
 
+import android.content.Context
 import wormholelogger.service.internal.FirebaseLogHandler
+
+const val PREFERENCE_NAME = "WhLogger"
+const val PREFERENCE_KEY = "WhLogger.Package"
 
 /**
  * Configuration for the WormholeLogger service.
@@ -18,7 +22,8 @@ class WormholeLogger {
          * @param clientPackage The package name of the client app whose logs needs to be captured.
          */
         @JvmStatic
-        fun init(clientPackage: String) {
+        fun init(context: Context, clientPackage: String) {
+            context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE).edit().putString(PREFERENCE_KEY, clientPackage).apply()
             clientPackageName = clientPackage
         }
 
@@ -30,6 +35,15 @@ class WormholeLogger {
         @JvmStatic
         fun setCustomLogHandler(lHandler: LogHandler) {
             logHandler = lHandler
+        }
+
+        /**
+         * initialize package if not already set
+         */
+        internal fun init(context: Context) {
+            if (clientPackageName == null) {
+                clientPackageName = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE).getString(PREFERENCE_KEY, null)
+            }
         }
 
 

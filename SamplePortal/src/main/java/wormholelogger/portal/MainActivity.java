@@ -29,6 +29,6 @@ public class MainActivity extends Activity {
 
     private void initWormholeLogger() {
         String clientPackage = "wormholelogger.app";
-        WormholeLogger.init(clientPackage);
+        WormholeLogger.init(this, clientPackage);
     }
 }
