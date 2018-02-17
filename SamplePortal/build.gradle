@@ -27,8 +27,8 @@ android {
 
 dependencies {
 
-    //api project(':WormholeLoggerPortal')
-    api 'com.avakkachen:wormholelogger-portal:1.0.0-1-STAGING'
+    api project(':WormholeLoggerPortal')
+    //api 'com.avakkachen:wormholelogger-portal:1.0.0-2-STAGING'
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 

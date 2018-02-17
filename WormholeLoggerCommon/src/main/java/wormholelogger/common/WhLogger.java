@@ -1,7 +1,6 @@
 package wormholelogger.common;
 
 import remoter.annotations.Remoter;
-import wormholelogger.common.WhLoggerConstants.LogType;
 
 /**
  * Logger interface implemented by the WhLogger service
@@ -20,10 +19,7 @@ public interface WhLogger {
     /**
      * Logs the given message to the service.
      *
-     * @param logType The type of the message
-     * @param logTag  The log tag
-     * @param message The log message
-     * @param exLog   Exception if any
+     * @param log The log message
      */
-    int log(LogType logType, String logTag, String message, Throwable exLog);
+    int log(String log);
 }

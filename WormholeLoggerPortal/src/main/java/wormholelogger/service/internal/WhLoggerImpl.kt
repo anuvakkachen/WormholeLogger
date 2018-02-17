@@ -1,7 +1,6 @@
 package wormholelogger.service.internal
 
 import wormholelogger.common.WhLogger
-import wormholelogger.common.WhLoggerConstants.LogType
 import wormholelogger.service.WormholeLogger
 
 /**
@@ -16,10 +15,9 @@ internal class WhLoggerImpl : WhLogger {
         return clientAccepted
     }
 
-    override fun log(logType: LogType, logTag: String?, message: String?, exLog: Throwable?): Int {
+    override fun log(log: String): Int {
         if (clientAccepted) {
-            WormholeLogger.logHandler.log(logType, logTag, message, exLog)
-            return 1
+            return WormholeLogger.logHandler.log(log)
         }
         return 0
     }

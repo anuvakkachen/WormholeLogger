@@ -1,2 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="wormholelogger.log" />
+    package="wormholelogger.log">
+
+    <application>
+        <provider
+            android:name=".LogProvider"
+            android:authorities="${applicationId}.wormhole.logprovider" />
+    </application>
+</manifest>
+
+

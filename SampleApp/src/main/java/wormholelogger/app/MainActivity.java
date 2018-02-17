@@ -20,21 +20,16 @@ public class MainActivity extends Activity {
 
         Log.d(TAG, "onCreate");
 
-        initLogger();
-
         setContentView(R.layout.activity_main);
-    }
-
-    /**
-     * Initialize wormhole logger
-     */
-    private void initLogger() {
-        Log.init(this);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d(TAG, "Touch " + ev);
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            Log.d(TAG, "Touch Down " + ev);
+        } else if (ev.getAction() == MotionEvent.ACTION_UP) {
+            Log.w(TAG, "Touch UP ", new Exception("Testing"));
+        }
         return super.dispatchTouchEvent(ev);
     }
 
@@ -42,10 +37,6 @@ public class MainActivity extends Activity {
     protected void onDestroy() {
         Log.d(TAG, "onDestroy");
 
-        //destroy logger
-        Log.destroy();
-
-        Log.d(TAG, "Destroyed");
         super.onDestroy();
     }
 }

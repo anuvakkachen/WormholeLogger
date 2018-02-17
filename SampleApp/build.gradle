@@ -28,8 +28,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    //api project(':WormholeLogger')
-    api 'com.avakkachen:wormholelogger:1.0.0-1-STAGING'
+    api project(':WormholeLogger')
+    //api 'com.avakkachen:wormholelogger:1.0.0-2-STAGING'
 
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'

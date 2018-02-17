@@ -13,7 +13,7 @@ import wormholelogger.log.internal.WhLoggerRouter
 
 /**
  * Log wrapper for [android.util.Log].
- * This will send the log to remote wormhole (firebase) if a wormhole portal is installed, if not it logs
+ * This will send the formatAndLog to remote wormhole (firebase) if a wormhole portal is installed, if not it logs
  * to the standard [android.util.Log]
  *
  * Call [Log.init] to initialize the logger with the client packageName
@@ -34,7 +34,7 @@ class Log {
                 val loggerProxy: WhLogger = WhLogger_Proxy(p1)
                 android.util.Log.v("WhLog", "Connected to WhLogService")
                 if (loggerProxy.register(packageName)) {
-                    logger = WhLoggerRouter(loggerProxy)
+                    logger = WhLoggerRouter(loggerProxy, packageName!!)
                     isConnected = true
                     android.util.Log.v("WhLog", "Registered to WhLogService")
                 } else {
@@ -59,8 +59,7 @@ class Log {
          * @param context [Context] of client app
          * @see [Log.destroy]
          */
-        @JvmStatic
-        fun init(context: Context) {
+        internal fun init(context: Context) {
             this.context = context
             packageName = context.packageName
             val intent = Intent(WhLoggerConstants.WH_LOGGER_INTENT)
@@ -78,8 +77,7 @@ class Log {
         /**
          * Called during onDestroy to clean up any
          */
-        @JvmStatic
-        fun destroy() {
+        internal fun destroy() {
             if (isConnected) {
                 context?.unbindService(serviceConnection)
                 isConnected = false

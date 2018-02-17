@@ -1,7 +1,6 @@
 package wormholelogger.service.internal
 
 import android.util.Log
-import wormholelogger.common.WhLoggerConstants.LogType
 import wormholelogger.service.LogHandler
 
 /**
@@ -9,13 +8,8 @@ import wormholelogger.service.LogHandler
  */
 internal open class DefaultLogHandler : LogHandler {
 
-    override fun log(logType: LogType, logTag: String?, message: String?, exLog: Throwable?) {
-        when (logType) {
-            LogType.WARN -> Log.w(logTag, message, exLog)
-            LogType.ERROR -> Log.e(logTag, message, exLog)
-            LogType.DEBUG -> Log.d(logTag, message, exLog)
-            LogType.VERBOSE -> Log.v(logTag, message, exLog)
-            LogType.INFO -> Log.i(logTag, message, exLog)
-        }
-    }
+    /**
+     * Default implementation that logs to Log
+     */
+    override fun log(message: String) = Log.v("WormHole", message)
 }

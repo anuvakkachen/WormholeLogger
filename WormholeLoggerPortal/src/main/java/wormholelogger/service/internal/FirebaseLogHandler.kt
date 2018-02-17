@@ -1,6 +1,5 @@
 package wormholelogger.service.internal
 
-import wormholelogger.common.WhLoggerConstants.LogType
 import wormholelogger.service.LogHandler
 
 /**
@@ -16,11 +15,12 @@ internal class FirebaseLogHandler : DefaultLogHandler() {
     }
 
 
-    override fun log(logType: LogType, logTag: String?, message: String?, exLog: Throwable?) {
+    override fun log(message: String): Int {
         if (firebaseInitialized) {
             //todo, send to firebase
         } else {
-            super.log(logType, logTag, message, exLog)
+            super.log(message)
         }
+        return 1
     }
 }
