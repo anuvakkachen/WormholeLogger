@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
 
     private void initWormholeLogger() {
         String clientPackage = "wormholelogger.app";
+        WormholeLogger.setGoogleServicesResourceId(this, R.raw.google_services);
         WormholeLogger.init(this, clientPackage);
     }
 }

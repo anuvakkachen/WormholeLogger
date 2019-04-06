@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 26
@@ -27,10 +29,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.josesamuel:remoter-annotations:1.1.4'
-    annotationProcessor 'com.josesamuel:remoter:1.1.4'
+    api 'com.josesamuel:remoter-annotations:1.2.0'
+    annotationProcessor 'com.josesamuel:remoter:1.2.0'
 
     api 'com.josesamuel:parceler-api:1.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
